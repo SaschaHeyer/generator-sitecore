@@ -1,7 +1,7 @@
 # generator-sitecore
 
 Yeoman generator for Sitcore
-> NOTE: The generator is in progress and not ready yet.
+> NOTE: Beta Version
 
 [![](https://github.com/SaschaHeyer/generator-sitecore/blob/master/documentation/yo-sitecore-sample.gif)]('Sitecore Generator')
 [![](https://github.com/SaschaHeyer/generator-sitecore/blob/master/documentation/yo-sitecore-usage.gif)]('Sitecore Generator Usage')

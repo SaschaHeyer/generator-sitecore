@@ -18,15 +18,11 @@ Yeoman generator for Sitcore
 
 ## Template projects
 
-Full, template based projects available in generator:
+Full, template based projects available (currently) in generator:
 
 - Helix (Unicorn support)
-    - Foundation
-    - Feature
-    - Project
+    - Helix Project (Project-Layer)
     - Empty Helix Solution
-- Sitcore Experience Accelerator
-- Sitecore Data Exchange Framework
 
 
 ## Empty Helix Solution

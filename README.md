@@ -54,9 +54,8 @@ Included functions:
 
 
 ## Roadmap
-- Unicorn support
-- (TDS Support)
-- publish profile
-- selectable Sitecore version
-- Sitecore Experience Accelerator generator
-- Sitecore Data Exchange Framework generator
+* .NET version selector
+* Sitecore version selector
+* publish profile (optional)
+* Full unicorn support
+* more generators (Data Exchange Framework, Sitecore Experience Accelerator)

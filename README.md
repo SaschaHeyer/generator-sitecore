@@ -3,7 +3,6 @@
 Yeoman generator for Sitcore
 > NOTE: Beta Version
 
-[![](https://github.com/SaschaHeyer/generator-sitecore/blob/master/documentation/yo-sitecore-sample.gif)]('Sitecore Generator')
 [![](https://github.com/SaschaHeyer/generator-sitecore/blob/master/documentation/yo-sitecore-usage.gif)]('Sitecore Generator Usage')
 
 ## Getting Started

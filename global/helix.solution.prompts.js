@@ -1,48 +1,50 @@
 'use strict';
 
-module.exports = [{
-        type: 'list',
-        name: 'type',
-        message: 'What type of application do you want to create?',
-        choices: [{
-            name: 'Helix',
-            value: 'helix'
-        }, {
-            name: 'Sitecore Experience Platform',
-            value: 'sxp'
-        }, {
-            name: 'Sitecore Data Exchange Framework',
-            value: 'dxf'
-        }]
-    },
-    {
+module.exports = [
+    /*{
+            type: 'list',
+            name: 'targetFramework',
+            message: 'Target .net framework version?',
+            choices: [{
+                name: '.net 4.6.1',
+                value: 'v4.6.1'
+            }, {
+                name: '.net 4.6',
+                value: 'v4.6'
+            }, {
+                name: '.net 4.5.2',
+                value: 'v4.5.2'
+            }]
+        },*/
+    /*{
         type: 'list',
         name: 'helixtype',
         message: 'Which Helix Project Type would you like to create?',
         default: 'feature',
         choices: [{
-                name: 'Foundation',
-                value: 'foundation'
-            },
-            {
-                name: 'Feature',
-                value: 'feature'
-            },
-            {
-                name: 'Project',
-                value: 'project'
-            },
-            {
-                name: 'Empty Helix Solution',
-                value: 'emptyhelix'
-            }
-        ],
-        when: function(answers) {
-            return answers.type === 'helix';
-        }
+                    name: 'Foundation',
+                    value: 'foundation'
+                },
+                {
+                    name: 'Feature',
+                    value: 'feature'
+                },
+                {
+                    name: 'Project',
+                    value: 'project'
+                },
+                {
+                    name: 'Empty Helix Solution',
+                    value: 'emptyhelix'
+                }
+            ]
+            ,
+                    when: function(answers) {
+                        return answers.type === 'helix';
+                    }
 
-    },
-    {
+    },*/
+    /*{
         type: 'list',
         name: 'sitecoreVersion',
         message: 'Which Sitecore Version would you use? (NuGet Feed)',
@@ -68,7 +70,8 @@ module.exports = [{
             return answers.helixtype === 'soon';
         }
 
-    },
+    }*/
+    /*,
     {
         type: 'list',
         name: 'serializationtype',
@@ -102,14 +105,14 @@ module.exports = [{
                 answers.helixtype === 'project' ||
                 answers.helixtype === 'feature';
         }
-    },
+    },*/
     {
         type: 'input',
         name: 'solutionName',
         message: 'Enter the name of your Solution:',
-        when: function(answers) {
+        /*when: function(answers) {
             return answers.helixtype === 'emptyhelix';
-        }
+        }*/
     }
 
 ];

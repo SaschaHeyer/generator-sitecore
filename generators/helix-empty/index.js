@@ -1,21 +1,21 @@
 'use strict';
 
 var Generator = require('yeoman-generator');
-var chalk = require('chalk');
-var yosay = require('yosay');
+//ar chalk = require('chalk');
+//var yosay = require('yosay');
 var path = require('path');
 var mkdirp = require('mkdirp');
 var guid = require('node-uuid');
-const prompts = require('./prompts');
+const prompts = require('../../global/helix.solution.prompts');
 
 
 module.exports = class extends Generator {
 
     constructor(args, opts) { super(args, opts); }
 
-    init() {
+    /*init() {
         this.log(yosay('Welcome to the ' + chalk.magenta('Sitecore') + ' generator, more soon!. For updates visit www.blog.saschaheyer.de'));
-    }
+    }*/
 
     prompting() {
 

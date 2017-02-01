@@ -19,7 +19,7 @@ Yeoman generator for Sitcore
 
 Full, template based projects available in generator:
 
-- Helix (Unicorn and TDS are supported)
+- Helix (Unicorn support)
     - Foundation
     - Feature
     - Project
@@ -58,7 +58,8 @@ Included functions:
 
 ## Roadmap
 - Unicorn support
-- TDS Support
+- (TDS Support)
+- publish profile
 - selectable Sitecore version
 - Sitecore Experience Accelerator generator
 - Sitecore Data Exchange Framework generator

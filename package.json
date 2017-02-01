@@ -1,0 +1,29 @@
+{
+    "name": "generator-sitecore",
+    "version": "1.3.0",
+    "description": "",
+    "main": "index.js",
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "keywords": [
+        "yeoman-generator"
+    ],
+    "repository": "SaschaHeyer/generator-sitecore",
+    "author": {
+        "name": "Sascha Heyer",
+        "email": "",
+        "url": "http://blog.saschaheyer.de"
+    },
+    "license": "MIT",
+    "bugs": {
+        "url": "https://github.com/SaschaHeyer/generator-sitecore"
+    },
+    "homepage": "https://github.com/SaschaHeyer/generator-sitecore",
+    "dependencies": {
+        "chalk": "^1.1.3",
+        "node-uuid": "^1.4.7",
+        "yeoman-generator": "^1.1.0",
+        "yosay": "^1.2.1"
+    }
+}

@@ -92,9 +92,7 @@ module.exports = class extends Generator {
                 projectFolder: this.props.projectFolder,
                 solutionFolder: this.props.solutionFolder,
                 solutionName: this.props.solutionName,
-                projectGuid: this.props.projectGuid,
-                tdsGuid: this.props.tdsGuid,
-                createTdsProject: this.props.createTdsProject
+                projectGuid: this.props.projectGuid
             }
         );
     }

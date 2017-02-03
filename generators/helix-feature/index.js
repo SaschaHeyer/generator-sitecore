@@ -2,9 +2,11 @@
 
 var Generator = require('yeoman-generator');
 var path = require('path');
+var chalk = require('chalk');
 var mkdirp = require('mkdirp');
 var guid = require('node-uuid');
 const prompts = require('../../global/helix.feature.prompts');
+const versionSitecorePrompts = require('../../global/version.sitecore.prompts');
 
 module.exports = class extends Generator {
 
@@ -21,6 +23,20 @@ module.exports = class extends Generator {
             this.featureName = answers.featureName;
             this.log('feature name:' + this.featureName);
         });
+
+    }
+
+    promptingSitecoreVersion() {
+        if (!this.config.get('sitecoreVersion')) {
+
+            this.log(chalk.magenta('No Sitecore version preset found, please select a Sitecore version'));
+
+            return this.prompt(versionSitecorePrompts).then((answers) => {
+
+                this.config.set('sitecoreVersion', answers.sitecoreVersion);
+
+            });
+        }
     }
 
     configure() {
@@ -52,7 +68,17 @@ module.exports = class extends Generator {
             this.templatePath('Feature/code/.Sitecore.Feature.csproj'),
             this.destinationPath(path.join(this.targetPath, 'code', 'Sitecore.Feature.' + this.featureName + '.csproj')), {
                 projectGuid: this.projectGuid,
-                featureName: this.featureName
+                featureName: this.featureName,
+                sitecoreVersion: this.config.get('sitecoreVersion')
+            }
+        );
+    }
+
+    packages() {
+        this.fs.copyTpl(
+            this.templatePath('Feature/code/.packages.config'),
+            this.destinationPath(path.join(this.targetPath, 'code', 'packages.config')), {
+                sitecoreVersion: this.config.get('sitecoreVersion')
             }
         );
     }
@@ -76,5 +102,4 @@ module.exports = class extends Generator {
             }
         );
     }
-
 };

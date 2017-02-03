@@ -12,6 +12,7 @@ Yeoman generator for Sitcore
     - Yeoman: `npm install -g yo`
 - Install: `npm install -g generator-sitecore`
 - Run: `yo sitecore`
+- Update NuGet: `nuget restore`
 
 > **NPM** https://www.npmjs.com/package/generator-sitecore
 
@@ -30,6 +31,7 @@ Included functions:
 - Git preconfigured (.gitignore and .gitattributes)
 - NuGet preconfigured (added Sitecore v2 and v3 feeds)
 - Sitecore NuGet feed references
+- Sitecore version selector
 - Initial README.md
 - Solution
 - Initial Folder
@@ -38,8 +40,11 @@ Included functions:
     - Foundation
     - Project
 - Initial Project
-	
-> NuGet restore required
+
+## Helix Feature Layer Project
+- Sitecore version selector
+- Project
+- Initial Folder
     
 ## Sitecore Data Exchange Framework
 Included functions:
@@ -51,10 +56,8 @@ Included functions:
 
 - soon
 
-
 ## Roadmap
 * .NET version selector
-* Sitecore version selector
 * publish profile (optional)
 * Full unicorn support
 * more generators (Data Exchange Framework, Sitecore Experience Accelerator)

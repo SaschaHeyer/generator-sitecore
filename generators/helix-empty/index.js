@@ -1,12 +1,12 @@
 'use strict';
 
 var Generator = require('yeoman-generator');
-//ar chalk = require('chalk');
-//var yosay = require('yosay');
+var chalk = require('chalk');
 var path = require('path');
 var mkdirp = require('mkdirp');
 var guid = require('node-uuid');
 const prompts = require('../../global/helix.solution.prompts');
+const versionSitecorePrompts = require('../../global/version.sitecore.prompts');
 
 
 module.exports = class extends Generator {
@@ -32,6 +32,20 @@ module.exports = class extends Generator {
             this.config.set('helixType', this.helixtype)
         });
     }
+
+    promptingSitecoreVersion() {
+        if (!this.config.get('sitecoreVersion')) {
+
+            this.log(chalk.magenta('No Sitecore version preset found, please select a Sitecore version'));
+
+            return this.prompt(versionSitecorePrompts).then((answers) => {
+
+                this.config.set('sitecoreVersion', answers.sitecoreVersion);
+
+            });
+        }
+    }
+
 
     configure() {
         this.projectGuid = '{' + guid.v4() + '}';
@@ -111,7 +125,17 @@ module.exports = class extends Generator {
             this.templatePath('src/Project/Sample/code/.Sitecore.Project.Website.csproj'),
             this.destinationPath(path.join(this.codePath, 'code', this.solutionName + '.Website.csproj')), {
                 projectGuid: this.projectGuid,
-                solutionName: this.solutionName
+                solutionName: this.solutionName,
+                sitecoreVersion: this.config.get('sitecoreVersion')
+            }
+        );
+    }
+
+    packages() {
+        this.fs.copyTpl(
+            this.templatePath('src/Project/Sample/code/.packages.config'),
+            this.destinationPath(path.join(this.codePath, 'code', 'packages.config')), {
+                sitecoreVersion: this.config.get('sitecoreVersion')
             }
         );
     }
@@ -143,7 +167,7 @@ module.exports = class extends Generator {
                 projectFolder: this.projectFolder,
                 solutionFolder: this.solutionFolder,
                 solutionName: this.solutionName,
-                projectGuid: this.projectGuid
+                projectGuid: this.projectGuid,
             }
         );
     }

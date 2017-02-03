@@ -9,6 +9,7 @@ var guid = require('node-uuid');
 const typePrompts = require('../../global/type.prompts.js');
 
 
+
 module.exports = class extends Generator {
 
     constructor(args, opts) { super(args, opts); }

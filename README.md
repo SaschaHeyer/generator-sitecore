@@ -1,5 +1,8 @@
 # generator-sitecore
 
+![Version](https://img.shields.io/npm/v/generator-sitecore.svg)
+![Downloads per month](https://img.shields.io/npm/dm/generator-sitecore.svg)
+
 Yeoman generator for Sitcore
 > NOTE: Beta Version
 

@@ -8,7 +8,6 @@ var guid = require('node-uuid');
 const prompts = require('../../global/helix.solution.prompts');
 const versionSitecorePrompts = require('../../global/version.sitecore.prompts');
 
-
 module.exports = class extends Generator {
 
     constructor(args, opts) { super(args, opts); }
@@ -28,7 +27,6 @@ module.exports = class extends Generator {
             this.type = answers.helixtype;
 
             this.config.set('unicorn', answers.unicorn);
-
             this.config.set('projectName', this.projectName);
             this.config.set('solutionName', this.solutionName)
             this.config.set('type', this.type);
@@ -75,10 +73,24 @@ module.exports = class extends Generator {
         mkdirp.sync('src/Project/' + this.solutionName);
         mkdirp.sync('src/Project/' + this.solutionName + '/code');
         mkdirp.sync('src/Project/' + this.solutionName + '/code/App_Config');
+        mkdirp.sync('src/Project/' + this.solutionName + '/code/App_Config/Include');
         mkdirp.sync('src/Project/' + this.solutionName + '/code/Views');
         mkdirp.sync('src/Project/' + this.solutionName + '/serialization');
         mkdirp.sync('src/Project/' + this.solutionName + '/specs');
         mkdirp.sync('src/Project/' + this.solutionName + '/tests');
+    }
+
+    unicorn()
+    {
+        if(this.config.get('unicorn'))
+        {
+            this.fs.copyTpl(
+                this.templatePath('src/Project/Sample/code/App_Config/Include/.Serialization.config'),
+                this.destinationPath(path.join(this.codePath, 'code/App_Config/Include/' + this.solutionName, this.solutionName + '.Website.Serialization.config')), {
+                    solutionName: this.solutionName
+                }
+            );
+        }
     }
 
     git() {
@@ -135,7 +147,8 @@ module.exports = class extends Generator {
             this.destinationPath(path.join(this.codePath, 'code', this.solutionName + '.Website.csproj')), {
                 projectGuid: this.projectGuid,
                 solutionName: this.solutionName,
-                sitecoreVersion: this.config.get('sitecoreVersion')
+                sitecoreVersion: this.config.get('sitecoreVersion'),
+                unicorn: this.config.get('unicorn')
             }
         );
     }

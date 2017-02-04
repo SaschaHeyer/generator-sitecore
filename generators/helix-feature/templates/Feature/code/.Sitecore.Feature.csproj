@@ -103,7 +103,12 @@
     <Reference Include="System.Xml.Linq" />
   </ItemGroup>
   <ItemGroup>
+    <% if(!unicorn){ %>
+    <Folder Include="App_Config\Include\Feature" />
+    <% } -%>
+    <% if(unicorn){ %>
     <Content Include="App_Config\Include\Feature\Feature.<%= featureName %>.Serialization.config" />
+    <% } -%>
     <Content Include="packages.config" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>

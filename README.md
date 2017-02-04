@@ -65,3 +65,6 @@ Included functions:
 * publish profile (optional)
 * Full unicorn support
 * more generators (Data Exchange Framework, Sitecore Experience Accelerator)
+
+
+> https://travis-ci.org/SaschaHeyer/generator-sitecore

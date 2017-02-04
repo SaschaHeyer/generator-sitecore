@@ -1,7 +1,7 @@
 {
     "name": "generator-sitecore",
-    "version": "1.11.0",
-    "description": "Yeoman Sitcore Generator (including Helix and other Template Types)",
+    "version": "1.11.1",
+    "description": "Yeoman Sitecore Generator (including Helix and other Template Types)",
     "main": "index.js",
     "scripts": {
     },

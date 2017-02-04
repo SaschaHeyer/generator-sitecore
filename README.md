@@ -2,7 +2,7 @@
 
 ![Version](https://img.shields.io/npm/v/generator-sitecore.svg)
 ![Downloads per month](https://img.shields.io/npm/dm/generator-sitecore.svg)
-![Build Status](https://travis-ci.org/SaschaHeyer/generator-sitecore.svg?branch=master)
+![Build Status](https://api.travis-ci.org/SaschaHeyer/generator-sitecore.svg?branch=master)
 
 Yeoman generator for Sitcore
 > NOTE: Beta Version

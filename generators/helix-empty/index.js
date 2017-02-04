@@ -27,6 +27,8 @@ module.exports = class extends Generator {
             this.type = answers.type;
             this.type = answers.helixtype;
 
+            this.config.set('unicorn', answers.unicorn);
+
             this.config.set('projectName', this.projectName);
             this.config.set('solutionName', this.solutionName)
             this.config.set('type', this.type);

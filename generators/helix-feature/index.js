@@ -49,7 +49,9 @@ module.exports = class extends Generator {
     initialFolders() {
 
         mkdirp.sync(path.join(this.targetPath, 'tests'));
-        mkdirp.sync(path.join(this.targetPath, 'serialization'));
+        mkdirp.sync(path.join(this.targetPath, 'code/App_Config'));
+        mkdirp.sync(path.join(this.targetPath, 'code/App_Config/Include'));
+        mkdirp.sync(path.join(this.targetPath, 'code/App_Config/Include' + this.featureName));
         mkdirp.sync(path.join(this.targetPath, 'code/Controllers'));
         mkdirp.sync(path.join(this.targetPath, 'code/Models'));
         mkdirp.sync(path.join(this.targetPath, 'code/Repositories'));
@@ -61,6 +63,21 @@ module.exports = class extends Generator {
                 globOptions: { dot: false }
             }
         );
+    }
+
+    unicorn()
+    {
+        if(this.config.get('unicorn'))
+        {
+            mkdirp.sync(path.join(this.targetPath, 'serialization'));
+
+            this.fs.copyTpl(
+                this.templatePath('Feature/code/App_Config/Include/Feature/.Feature.Sample.Serialization.config'),
+                this.destinationPath(path.join(this.targetPath, 'code/App_Config/Include/Feature/', 'Feature.' + this.featureName + '.Serialization.config')), {
+                    featureName: this.featureName
+                }
+            );
+        }
     }
 
     project() {
@@ -88,16 +105,6 @@ module.exports = class extends Generator {
         this.fs.copyTpl(
             this.templatePath('Feature/code/Properties/.AssemblyInfo.cs'),
             this.destinationPath(path.join(this.targetPath, 'code/Properties', 'AssemblyInfo.cs')), {
-                featureName: this.featureName
-            }
-        );
-    }
-
-    serialization() {
-
-        this.fs.copyTpl(
-            this.templatePath('Feature/code/App_Config/Include/Feature/.Feature.Sample.Serialization.config'),
-            this.destinationPath(path.join(this.targetPath, 'code/App_Config/Include/Feature/', 'Feature.' + this.featureName + '.Serialization.config')), {
                 featureName: this.featureName
             }
         );

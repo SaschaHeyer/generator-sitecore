@@ -110,14 +110,16 @@ module.exports = [
         type: 'input',
         name: 'solutionName',
         message: 'Enter the name of your Solution:',
-        /*when: function(answers) {
-            return answers.helixtype === 'emptyhelix';
-        }*/
     },
     {
       type    : 'confirm',
       name    : 'git',
       message : 'Would you like to preconfigure git?'
+    },
+    {
+      type    : 'confirm',
+      name    : 'unicorn',
+      message : 'Would you like to preconfigure serialization (unicorn)?'
     }
 
 ];

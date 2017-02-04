@@ -74,9 +74,7 @@ module.exports = class extends Generator {
         mkdirp.sync('src/Project/' + this.solutionName + '/code');
         mkdirp.sync('src/Project/' + this.solutionName + '/code/App_Config');
         mkdirp.sync('src/Project/' + this.solutionName + '/code/App_Config/Include');
-        mkdirp.sync('src/Project/' + this.solutionName + '/code/Views');
-        mkdirp.sync('src/Project/' + this.solutionName + '/serialization');
-        mkdirp.sync('src/Project/' + this.solutionName + '/specs');
+        mkdirp.sync('src/Project/' + this.solutionName + '/code/Views'); 
         mkdirp.sync('src/Project/' + this.solutionName + '/tests');
     }
 
@@ -84,6 +82,8 @@ module.exports = class extends Generator {
     {
         if(this.config.get('unicorn'))
         {
+            mkdirp.sync('src/Project/' + this.solutionName + '/serialization');
+
             this.fs.copyTpl(
                 this.templatePath('src/Project/Sample/code/App_Config/Include/.Serialization.config'),
                 this.destinationPath(path.join(this.codePath, 'code/App_Config/Include/' + this.solutionName, this.solutionName + '.Website.Serialization.config')), {

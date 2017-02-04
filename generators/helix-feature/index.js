@@ -86,7 +86,8 @@ module.exports = class extends Generator {
             this.destinationPath(path.join(this.targetPath, 'code', 'Sitecore.Feature.' + this.featureName + '.csproj')), {
                 projectGuid: this.projectGuid,
                 featureName: this.featureName,
-                sitecoreVersion: this.config.get('sitecoreVersion')
+                sitecoreVersion: this.config.get('sitecoreVersion'),
+                unicorn: this.config.get('unicorn')
             }
         );
     }

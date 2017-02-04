@@ -113,6 +113,11 @@ module.exports = [
         /*when: function(answers) {
             return answers.helixtype === 'emptyhelix';
         }*/
+    },
+    {
+      type    : 'confirm',
+      name    : 'git',
+      message : 'Would you like to preconfigure git?'
     }
 
 ];

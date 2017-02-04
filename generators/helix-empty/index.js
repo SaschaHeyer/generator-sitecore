@@ -23,6 +23,7 @@ module.exports = class extends Generator {
 
             this.projectName = answers.projectName;
             this.solutionName = answers.solutionName;
+            this.git = answers.git;
             this.type = answers.type;
             this.type = answers.helixtype;
 
@@ -79,13 +80,19 @@ module.exports = class extends Generator {
     }
 
     git() {
-        /*this.fs.copy(
-            this.templatePath('.gitignore'), this.destinationPath(path.join('.gitignore'))
-        );*/
+        if(!this.git)
+        {
+            return;
+        }
+        
+        this.fs.copy(
+            this.templatePath('.ignore'), this.destinationPath(path.join('.gitignore'))
+        );
 
         this.fs.copy(
-            this.templatePath('.gitattributes'), this.destinationPath(path.join('.gitattributes'))
+            this.templatePath('.attributes'), this.destinationPath(path.join('.gitattributes'))
         );
+             
     }
 
     files() {

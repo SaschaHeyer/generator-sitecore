@@ -9,6 +9,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Configuration", "Configurat
 		.gitignore = .gitignore
 		README.md = README.md
 		nuget.config = nuget.config
+		publishsettings.targets = publishsettings.targets
 	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Feature", "Feature", "<%= featureFolder %>"

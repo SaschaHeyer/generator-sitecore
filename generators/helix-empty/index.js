@@ -22,6 +22,7 @@ module.exports = class extends Generator {
 
             this.projectName = answers.projectName;
             this.solutionName = answers.solutionName;
+            this.projectUrl = answers.projectUrl;
             this.git = answers.git;
             this.type = answers.type;
             this.type = answers.helixtype;
@@ -31,6 +32,7 @@ module.exports = class extends Generator {
             this.config.set('solutionName', this.solutionName)
             this.config.set('type', this.type);
             this.config.set('helixType', this.helixtype)
+            this.config.set('projectUrl', this.projectUrl);
         });
     }
 
@@ -107,6 +109,14 @@ module.exports = class extends Generator {
             this.templatePath('.attributes'), this.destinationPath(path.join('.gitattributes'))
         );
              
+    }
+
+    habitatStandard()
+    {
+        this.fs.copyTpl(this.templatePath('publishsettings.targets'), this.destinationPath(path.join('publishsettings.targets')), {
+                    projectUrl: this.projectUrl
+                }
+        );
     }
 
     files() {

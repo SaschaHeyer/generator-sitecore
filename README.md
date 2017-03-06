@@ -37,6 +37,7 @@ Included functions:
 - Sitecore NuGet feed references
 - Sitecore version selector
 - Initial README.md
+- publishsettings.targets
 - Solution
 - Initial Folder
     - Configuration

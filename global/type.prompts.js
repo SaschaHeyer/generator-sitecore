@@ -8,13 +8,13 @@ module.exports = [{
             name: 'Helix Solution',
             value: 'helixSolution'
         },
-        /*{
-            name: 'Helix (Project)',
-            value: 'helixProject'
-        },*/
         {
             name: 'Helix (Feature)',
             value: 'helixFeature'
+        },
+        {
+            name: 'Helix (Foundation)',
+            value: 'helixFoundation'
         },
         /*{
             name: 'Sitecore Experience Platform',

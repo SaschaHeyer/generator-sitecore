@@ -31,6 +31,10 @@ module.exports = class extends Generator {
             if (answers.type === 'helixFeature') {
                 this.composeWith(require.resolve('../helix-feature'));
             }
+
+            if (answers.type === 'helixFoundation') {
+                this.composeWith(require.resolve('../helix-foundation'));
+            }
         });
     }
 
